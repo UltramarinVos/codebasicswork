@@ -132,13 +132,39 @@ print_r(' and ');
 print_r($pet);?>
 
 24
+<?php
 
+$eurosCount = 100;
+$dollarCount = $eurosCount * 1.25;
+$rubelsCost = $dollarCount * 60;
+
+print_r($dollarCount);
+print_r("\n");
+print_r($rubelsCost);?>
 
 25
+<?php
 
+$info = "We couldn't verify you mother's maiden name.";
+$intro = "\nHere is important information about your account security.";
+
+$firstName = 'Joffrey';
+$greeting = 'Hello';
+
+print_r($greeting . ', ' . $firstName . '!');
+print_r($intro . "\n" . $info);?>
 
 26
+<?php
 
+$info = "We couldn't verify you mother's maiden name.";
+$intro = "\nHere is important information about your account security.";
+
+$firstName = 'Joffrey';
+$greeting = 'Hello';
+
+print_r($greeting . ', ' . $firstName . '!');
+print_r($intro . "\n" . $info);?>
 
 27
 
