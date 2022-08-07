@@ -182,3 +182,168 @@ const DRAGONS_BORN_COUNT = 3;?>
 print_r(__DIR__);?>
 
 30
+<?php
+
+$stark = 'Arya';
+
+print_r("Do you want to eat, {$stark}?");?>
+
+31
+<?php
+
+$one = 'Naharis';
+$two = 'Mormont';
+$three = 'Sand';
+
+print_r("{$one[2]}{$two[1]}{$three[3]}{$two[4]}{$two[2]}");?>
+
+32
+<?php
+
+$str =<<<EOT
+Lannister, Targaryen, Baratheon, Stark, Tyrell... they're all just spokes on a wheel.
+This one's on top, then that one's on top, and on and on it spins, crushing those on the ground.
+EOT;
+
+print_r($str);?>
+
+33
+<?php
+
+$company1 = 'Apple';
+$company2 = 'Samsung';
+
+$company1Sum = strlen($company1);
+$company2Sum = strlen($company2);
+
+print_r($company1Sum + $company2Sum);?>
+
+34
+<?php
+
+$text = 'mount';
+
+print_r(ucfirst($text));?>
+
+35
+<?php
+
+$number = 10.1234;
+
+print_r(round($number, 2));?>
+
+36
+
+
+37
+
+
+38
+
+
+39
+
+
+40
+
+
+41
+
+
+42
+
+
+43
+
+
+44
+
+
+45
+
+
+46
+
+
+47
+
+
+48
+
+
+49
+
+
+50
+
+
+51
+
+
+52
+
+
+53
+
+
+54
+
+
+56
+
+
+57
+
+
+58
+
+
+59
+
+
+60
+
+
+61
+
+
+62
+
+
+63
+
+
+64
+
+
+65
+
+
+66
+
+
+67
+
+
+68
+
+
+69
+
+
+70
+
+
+71
+
+
+72
+
+
+73
+
+
+74
+
+
+75
