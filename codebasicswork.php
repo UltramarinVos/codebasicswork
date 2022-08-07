@@ -157,22 +157,28 @@ print_r($intro . "\n" . $info);?>
 26
 <?php
 
-$info = "We couldn't verify you mother's maiden name.";
-$intro = "\nHere is important information about your account security.";
+$firstNumber = 1.10;
+$secondNumber = -100;
 
-$firstName = 'Joffrey';
-$greeting = 'Hello';
-
-print_r($greeting . ', ' . $firstName . '!');
-print_r($intro . "\n" . $info);?>
+print_r($FirstNumber * $SecondNumber);?>
 
 27
+<?php
 
+$king = 'King Balon the 6th';
+$numberOfCastles = 6;
+$numberOfRooms = 17;
+
+print_r($king . ' has ' . ($numberOfCastles * $numberOfRooms) . ' rooms.');?>
 
 28
+<?php
 
+const DRAGONS_BORN_COUNT = 3;?>
 
 29
+<?php
 
+print_r(__DIR__);?>
 
 30
