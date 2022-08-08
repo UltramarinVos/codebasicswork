@@ -233,22 +233,55 @@ $number = 10.1234;
 print_r(round($number, 2));?>
 
 36
+<?php
 
+$text = 'Never forget what you are, for surely the world will not';
+$textResult = "First: {$text[0]}\nLast: {$text[strlen($text) -1]}";
+
+print_r($textResult);?>
 
 37
+<?php
 
+$min = min(3, 10, 22, -3, 0);
+
+print_r($min);?>
 
 38
+<?php
 
+$min = 1;
+$max = 6;
+
+print_r(rand($min, $max));?>
 
 39
+<?php
 
+$motto = 'Family, Duty, Honor';
+
+print_r(gettype($motto));?>
 
 40
+<?php
 
+namespace HexletBasics\DefineFunctions\Define;
+
+function printMotto()
+{
+    print_r("Winter is coming");
+};?>
 
 41
+<?php
 
+namespace HexletBasics\DefineFunctions\ReturnInstruction;
+
+function sayHurrayThreeTimes()
+{
+    $word = 'hurray!';
+    return "{$word} {$word} {$word}";
+};?>
 
 42
 
