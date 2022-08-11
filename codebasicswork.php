@@ -284,31 +284,100 @@ function sayHurrayThreeTimes()
 };?>
 
 42
+<?php
 
+namespace HexletBasics\DefineFunctions\Parameters;
+
+function truncate($str, $length){
+    $cuttedString = substr($str, 0, $length);
+    return "{$cuttedString}...";
+}?>
 
 43
+<?php
 
+namespace HexletBasics\DefineFunctions\DefaultArguments;
+
+function getHiddenCard($cardNumber, $y = 4){
+    $hiddenCatd = substr($cardNumber, 12);
+    return str_repeat('*', $y) . $hiddenCatd;
+}?>
 
 44
+<?php
 
+namespace HexletBasics\DefineFunctions\ReadingDocumentation;
+
+function getAge($a = 10, $b = 9.1, $c = 8.9, $d = 8.5){
+    $ageFloor = floor($a);
+    return $ageFloor;
+};?>
 
 45
+<?php
 
+namespace HexletBasics\Logic\BoolType;
+
+function isPensioner($age){
+    return $age >= 60;
+}
+
+var_dump(isPensioner(60));?>
 
 46
+<?php
 
+namespace HexletBasics\Logic\Predicates;
+
+function isMister($str){
+    return $str === 'Mister';
+}
+
+var_dump(isMister('Mister'));?>
 
 47
+<?php
 
+namespace HexletBasics\Logic\CombineExpressions;
+
+function isInternationalPhone($number){
+    return $number[0] === '+';
+}?>
 
 48
+<?php
 
+namespace HexletBasics\Logic\LogicalOperators;
+
+function isLeapYear($year){
+    return $year % 400 === 0 || ($year % 4 === 0 && $year % 100 !== 0);
+}?>
 
 49
+<?php
 
+namespace HexletBasics\Logic\LogicalNegation;
+
+use function HexletBasics\Functions\mb_strrev;
+
+function isPalindrome($word){
+    $loverWord = strtolower($word);
+    return $loverWord === strrev($loverWord);
+}
+
+function isNotPalindrome($word)
+{
+    return !isPalindrome($word);
+}?>
 
 50
+<?php
 
+namespace HexletBasics\Logic\LogicalOperators2;
+
+function isNeutralSoldier($colorArmor, $colorShield){
+    return $colorArmor !== 'red' && $colorShield === 'black';
+}?>
 
 51
 
