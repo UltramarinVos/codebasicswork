@@ -380,72 +380,375 @@ function isNeutralSoldier($colorArmor, $colorShield){
 }?>
 
 51
+<?php
 
+namespace HexletBasics\Logic\WeakTyping;
+
+function isFalsy($value){
+    return false == $value;
+}?>
 
 52
+<?php
 
+namespace HexletBasics\Conditionals\IfStatement;
+
+function guessNumber($number){
+    if ($number === 42){
+        return 'You win!';
+    };
+    return 'Try again!';
+}?>
 
 53
+<?php
 
+namespace HexletBasics\Conditionals\IfElse;
+
+function normalizeUrl($url){
+    if (strpos($url, 'http://') === 0){
+        $domain = substr($url, 7);
+    } else {
+        $domain = $url;
+    }
+    return "https://{$domain}";
+}?>
 
 54
+<?php
 
+namespace HexletBasics\Conditionals\ElseIfStatement;
+
+function whoIsThisHouseToStarks($name)
+{
+    if ($name === 'Karstark' || $name === 'Tully') {
+        return 'friend';
+    } elseif ($name === 'Lannister' || $name === 'Frey') {
+        return 'enemy';
+    }
+
+    return 'neutral';
+}?>
+
+55
+<?php
+
+namespace HexletBasics\Logic\TernaryOperator;
+
+function flipFlop($str){
+    if ($str === 'flip'){
+        return 'flop';
+    }
+    return 'flip';
+}?>
 
 56
+<?php
 
+namespace HexletBasics\Conditionals\SwitchStatement;
+
+function getNumberExplanation($number){
+    switch ($number){
+        case 7:
+            return 'prime number';
+        case 42:
+            return 'answer for everything';
+        case 666:
+            return 'devil number';
+        default:
+            return null;
+    }
+}?>
 
 57
+<?php
 
+namespace HexletBasics\Conditionals\Elvis;
+
+function generateAmount($products, $price){
+    $cost = $products ?: ($price * 3);
+    return $cost;
+}?>
 
 58
+<?php
 
+namespace HexletBasics\Loops\WhileLoop;
+
+function printNumbers($firstNumber)
+{
+    $i = $firstNumber;
+
+    while ($i >= 1) {
+        print_r($i);
+        print_r("\n");
+        $i = $i - 1;
+    }
+    print_r('finished!');
+}?>
 
 59
+<?php
 
+namespace HexletBasics\Loops\AgregationNumber;
+
+function multiplyNumbersFromRange($firstNumber, $lastNumber)
+{
+    $i = $firstNumber;
+    $mult = 1;
+
+    while ($i <= $lastNumber){
+        $mult = $mult * $i;
+        $i = $i + 1;
+    }
+    return $mult;
+};?>
 
 60
+<?php
 
+namespace HexletBasics\Loops\AgregationString;
+
+function joinNumbersFromRange($firsrt, $second)
+{
+    $result = '';
+    $i = $firsrt;
+
+    while ($i <= $second){
+        $result = "{$result}{$i}";
+        $i = $i + 1;
+    }
+
+    return $result;
+};?>
 
 61
+<?php
 
+namespace HexletBasics\Loops\IterationOverString;
+
+function printReversedWordBySymbol($word)
+{
+    $i = strlen($word) - 1;
+
+    while ($i >= 0) {
+        print_r("$word[$i]\n");
+        $i = $i - 1;
+    }
+}?>
 
 62
+<?php
 
+namespace HexletBasics\Loops\ConditionsInsideLoops;
+
+function countChars($str, $char)
+{
+    $i = 0;
+    $count = 0;
+    while ($i < strlen($str)) {
+        if (strtolower($str[$i]) === strtolower($char)) {
+            $count = $count + 1;
+        }
+        $i = $i + 1;
+    }
+
+    return $count;
+}?>
 
 63
+<?php
 
+namespace HexletBasics\Loops\ReverseString;
+
+function mysubstr($str, $length)
+{
+    $i = 0;
+    $result = '';
+
+    while ($i < $length) {
+        $currentChar = $str[$i];
+        $result = "{$result}{$currentChar}";
+        $i = $i + 1;
+    }
+    return $result;
+}?>
 
 64
+<?php
 
+namespace HexletBasics\Loops\EdgeCases;
+
+function isArgumentsForSubstrCorrect($str, $index, $lenght)
+{
+    $strLenght = strlen($str);
+
+    if ($index < 0){
+        return false;
+    }elseif ($lenght < 0){
+        return false;
+    }elseif ($index >= $strLenght){
+        return false;
+    }elseif ($lenght + $index > $strLenght){
+        return false;
+    }
+
+    return true;
+}?>
 
 65
+<?php
 
+namespace HexletBasics\Loops\SyntaxSugar;
+
+function filterString($str, $symbol)
+{
+    $i = 0;
+    $result = '';
+
+    while ($i < strlen($str)) {
+        $currentChar = $str[$i];
+
+        if ($currentChar !== $symbol){
+            $result = "{$result}{$currentChar}";
+        }
+
+        $i +=  1;
+    }
+
+    return $result;
+}?>
 
 66
+<?php
 
+namespace HexletBasics\Loops\Mutators;
+
+function makeItFunny($str, $n)
+{
+    $i = 0;
+    $result = '';
+
+    while ($i < strlen($str)) {
+        $currentChar = $str[$i];
+        if (($i + 1) % $n === 0){
+            $upperChar = strtoupper($currentChar);
+            $result = "{$result}{$upperChar}";
+        } else {
+            $result = "{$result}{$currentChar}";
+        }
+        $i++;
+    }
+
+    return $result;
+}?>
 
 67
+<?php
 
+namespace HexletBasics\Loops\ReturnFromLoop;
+
+function hasChar($str, $char)
+{
+    $i = 0;
+    $result = '';
+
+    while ($i < strlen($str)){
+        $currentChar = $str[$i];
+        if ($currentChar === $char){
+            return true;
+        }
+
+        $i++;
+    }
+    return false;
+}?>
 
 68
+<?php
 
+namespace HexletBasics\Loops\ForLoop;
+
+function sumOfSeries($first, $end)
+{
+    $summ = 0;
+
+    for ($i = $first; $i <= $end; $i++) {
+        $summ += $i;
+    }
+    return $summ;
+}?>
 
 69
+<?php
 
+namespace HexletBasics\DeepIntoStrings\Unicode;
+
+function invertCase($text)
+{
+    $len = mb_strlen($text);
+    $result = '';
+    for ($i = 0; $i < $len; $i++) {
+        $symbol = mb_substr($text, $i, 1);
+        $lowerSymbol = mb_strtolower($symbol);
+        if ($symbol === $lowerSymbol) {
+            $result .= mb_strtoupper($symbol);
+        } else {
+            $result .= $lowerSymbol;
+        }
+    }
+
+    return $result;
+}?>
 
 70
+<?php
 
+print_r(setlocale(LC_CTYPE, 0));?>
 
 71
+<?php
 
+namespace HexletBasics\DeepIntoStrings\StartWith;
+
+function startsWith($text, $substr)
+{
+    return mb_strpos($text, $substr) === 0;
+}?>
 
 72
+<?php
 
+namespace HexletBasics\Dates\Timestamp;
+
+const SECONDS_IN_YEAR = 60 * 60 * 24 * 365;
+
+function getYear($timestamp)
+{
+    return 1970 + (int) floor($timestamp / SECONDS_IN_YEAR);
+}?>
 
 73
+<?php
 
+namespace HexletBasics\Dates\DateFunction;
+
+function getCustomDate($timestamp)
+{
+    return date('d/m/Y', $timestamp);
+}?>
 
 74
+<?php
 
+namespace HexletBasics\Dates\Mkdtime;
+
+function getHexletBirthday()
+{
+    return mktime(0, 0, 0, 1, 1, 2012);
+}?>
 
 75
+<?php
+
+print_r(date_default_timezone_get());?>
